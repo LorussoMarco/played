@@ -1,0 +1,175 @@
+/* Chips Component Styles */
+.chips-container {
+  width: 100%;
+  margin: var(--spacing-m) 0;
+}
+
+.chips-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-s);
+  font-weight: 600;
+  color: var(--gray-charcoal);
+  font-size: 0.95rem;
+}
+
+.chips-counter {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  background: var(--green-leaf);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-small);
+  font-weight: 700;
+}
+
+/* Removed selected-chips section - keeping only available chips with indicators */
+
+.available-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-s);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-s) var(--spacing-m);
+  border-radius: var(--border-radius-large);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Available chips (not selected) */
+.chip.available {
+  background: var(--white-cloud);
+  color: var(--gray-charcoal);
+  border: 2px solid var(--gray-silver);
+  box-shadow: var(--shadow-soft);
+}
+
+.chip.available:hover {
+  border-color: var(--primary-color);
+  background: var(--green-leaf);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.chip.available:active {
+  transform: translateY(0);
+}
+
+/* Selected chips */
+.chip.selected {
+  background: var(--gradient-primary);
+  color: var(--white-cloud);
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-medium);
+}
+
+.chip.selected:hover {
+  background: var(--gradient-sky);
+  transform: translateY(-1px);
+}
+
+/* Disabled chips */
+.chip.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--gray-silver);
+  color: var(--gray-charcoal);
+  border-color: var(--gray-silver);
+}
+
+.chip.disabled:hover {
+  transform: none;
+  background: var(--gray-silver);
+  border-color: var(--gray-silver);
+}
+
+.chip-text {
+  flex: 1;
+}
+
+.chip-check {
+  font-size: 0.8rem;
+  margin-left: var(--spacing-xs);
+  color: var(--white-cloud);
+  font-weight: 700;
+}
+
+/* Removed chip-remove styles since we're not using separate selected chips anymore */
+
+.chips-placeholder {
+  color: var(--gray-charcoal);
+  font-style: italic;
+  text-align: center;
+  padding: var(--spacing-l);
+  background: var(--gray-silver);
+  border-radius: var(--border-radius-medium);
+  margin-top: var(--spacing-s);
+}
+
+/* Focus states for accessibility */
+.chip:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chip {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-s);
+  }
+  
+  .chips-label {
+    font-size: 0.9rem;
+  }
+  
+  .selected-chips {
+    min-height: 45px;
+  }
+}
+
+/* Animation for chip selection */
+@keyframes chipSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chip.selected {
+  animation: chipSelect 0.3s ease-out;
+}
+
+/* Smooth transitions for container */
+.available-chips {
+  transition: all var(--transition-fast);
+}
+
+/* Special styling when chips are being filtered */
+.chips-container.filtering .chip.available {
+  opacity: 0.7;
+}
+
+.chips-container.filtering .chip.available.highlighted {
+  opacity: 1;
+  border-color: var(--accent-color);
+}
