@@ -1,4 +1,4 @@
-# 🎮 PLAYED - Interactive Educational Platform
+# 🎮 PLAYED - Personalized Learning Activities for Young Education Dynamics
 
 A complete web platform for modular and adaptive educational games, designed for students and teachers. Built with modern technologies and a scalable architecture.
 
