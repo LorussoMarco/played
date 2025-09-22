@@ -1,104 +1,104 @@
-# 🎮 PLAYED - Piattaforma Educativa Interattiva
+# 🎮 PLAYED - Interactive Educational Platform
 
-Una piattaforma web completa per giochi didattici modulari e adattivi, progettata per studenti e docenti. Sviluppata con tecnologie moderne e architettura scalabile.
+A complete web platform for modular and adaptive educational games, designed for students and teachers. Built with modern technologies and a scalable architecture.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)
 ![React](https://img.shields.io/badge/react-19.1.0-blue.svg)
 ![MongoDB](https://img.shields.io/badge/database-MongoDB-green.svg)
 
-## 📋 Indice
+## 📋 Table of Contents
 
-- [🎯 Caratteristiche Principali](#-caratteristiche-principali)
-- [🎮 Tipi di Giochi](#-tipi-di-giochi)
-- [🏗️ Architettura](#️-architettura)
-- [🚀 Installazione e Setup](#-installazione-e-setup)
+- [🎯 Key Features](#-key-features)
+- [🎮 Game Types](#-game-types)
+- [🏗️ Architecture](#️-architecture)
+- [🚀 Installation & Setup](#-installation--setup)
 - [📊 API Endpoints](#-api-endpoints)
-- [🎨 Sistema di Design](#-sistema-di-design)
-- [🏆 Sistema di Progressi e Trofei](#-sistema-di-progressi-e-trofei)
-- [👥 Gestione Utenti](#-gestione-utenti)
+- [🎨 Design System](#-design-system)
+- [🏆 Progress & Trophy System](#-progress--trophy-system)
+- [👥 User Management](#-user-management)
 - [🧪 Testing](#-testing)
-- [🔧 Configurazione](#-configurazione)
-- [📈 Funzionalità Avanzate](#-funzionalità-avanzate)
-- [🤝 Contribuire](#-contribuire)
+- [🔧 Configuration](#-configuration)
+- [📈 Advanced Features](#-advanced-features)
+- [🤝 Contributing](#-contributing)
 
-## 🎯 Caratteristiche Principali
+## 🎯 Key Features
 
-### ✨ Funzionalità Core
-- **Sistema di Autenticazione Completo**: Registrazione, login, gestione profili per studenti e docenti
-- **Giochi Interattivi**: Quiz, Memory, Matching, Sorting con difficoltà progressive
-- **Sistema di Livelli**: Progressione automatica basata su performance
-- **Tracciamento Progressi**: Statistiche dettagliate e analytics
-- **Sistema Trofei**: Achievement system con ricompense
-- **Panel Docenti**: Strumenti per creare e gestire contenuti educativi
-- **Design Responsivo**: Ottimizzato per desktop, tablet e mobile
-- **Raccomandazioni Intelligenti**: Suggerimenti personalizzati basati su AI
+### ✨ Core Functionality
+- **Full Authentication System**: Registration, login, profile management for students and teachers
+- **Interactive Games**: Quiz, Memory, Matching, Sorting with progressive difficulty
+- **Level System**: Automatic progression based on performance
+- **Progress Tracking**: Detailed statistics and analytics
+- **Trophy System**: Achievements and rewards
+- **Teacher Panel**: Tools to create and manage educational content
+- **Responsive Design**: Optimized for desktop, tablet, and mobile
+- **Smart Recommendations**: AI-powered personalized suggestions
 
-### 🎯 Target Utenti
-- **Studenti**: Scuola primaria, secondaria di primo e secondo grado
-- **Docenti**: Creazione contenuti, monitoraggio progressi, gestione classi
-- **Amministratori**: Gestione piattaforma e analytics
+### 🎯 Target Users
+- **Students**: Elementary, middle, and high school
+- **Teachers**: Content creation, progress monitoring, class management
+- **Administrators**: Platform management and analytics
 
-## 🎮 Tipi di Giochi
+## 🎮 Game Types
 
-### 🧠 Quiz Interattivi
-- **Categorie**: Matematica, Scienze, Geografia, Storia, Italiano
-- **Caratteristiche**:
-  - Timer configurabile per categoria
-  - Domande a scelta multipla
-  - Feedback immediato con animazioni
-  - Sistema di punteggio dinamico
-  - Opzioni randomizzate per evitare memorizzazione
+### 🧠 Interactive Quizzes
+- **Categories**: Math, Science, Geography, History, Italian
+- **Features**:
+  - Configurable category-based timers
+  - Multiple-choice questions
+  - Instant feedback with animations
+  - Dynamic scoring system
+  - Randomized options to avoid memorization
 
 ### 🃏 Memory Games
-- **Categorie**: Animali, Colori, Forme, Numeri
-- **Caratteristiche**:
-  - Coppie di carte da abbinare
-  - Animazioni fluide con CSS3
-  - Timer opzionale
-  - Difficoltà progressiva (6-16 coppie)
+- **Categories**: Animals, Colors, Shapes, Numbers
+- **Features**:
+  - Card pair matching
+  - Smooth CSS3 animations
+  - Optional timer
+  - Progressive difficulty (6–16 pairs)
 
 ### 🔗 Matching Games
-- **Categorie**: Associazioni logiche, Sinonimi, Definizioni
-- **Caratteristiche**:
-  - Drag & drop intuitivo
-  - Feedback visivo immediato
-  - Sistema di colori per le coppie
-  - Tracciamento tentativi
+- **Categories**: Logical associations, Synonyms, Definitions
+- **Features**:
+  - Intuitive drag & drop
+  - Instant visual feedback
+  - Color-coded pair system
+  - Attempt tracking
 
 ### 📊 Sorting Games
-- **Categorie**: Ordinamento numerico, alfabetico, cronologico
-- **Caratteristiche**:
-  - Interfaccia drag & drop con @dnd-kit
-  - Validazione automatica
-  - Feedback educativo
-  - Difficoltà crescente
+- **Categories**: Numerical, alphabetical, chronological order
+- **Features**:
+  - Drag & drop interface with @dnd-kit
+  - Automatic validation
+  - Educational feedback
+  - Increasing difficulty
 
-## 🏗️ Architettura
+## 🏗️ Architecture
 
 ### 🖥️ Frontend (React 19)
 ```
 frontend/
 ├── src/
-│   ├── components/          # Componenti riutilizzabili
-│   │   ├── Avatar.jsx      # Sistema avatar utenti
-│   │   ├── GameBadge.jsx   # Card giochi
-│   │   ├── Stepper.jsx     # Wizard multi-step
+│   ├── components/          # Reusable components
+│   │   ├── Avatar.jsx       # User avatar system
+│   │   ├── GameBadge.jsx    # Game cards
+│   │   ├── Stepper.jsx      # Multi-step wizard
 │   │   └── LevelUnlockModal.jsx
-│   ├── games/              # Giochi implementati
-│   │   ├── Quiz/           # Sistema quiz
-│   │   ├── Memory/         # Gioco memoria
-│   │   ├── Matching/       # Gioco abbinamento
-│   │   └── Sorting/        # Gioco ordinamento
-│   ├── pages/              # Pagine principali
-│   │   ├── Home.jsx        # Dashboard principale
-│   │   ├── Profile.jsx     # Profilo utente
-│   │   ├── TeacherPanel.jsx # Panel docenti
-│   │   └── Results.jsx     # Risultati e statistiche
-│   ├── core/               # Logica core
-│   │   ├── AuthContext.js  # Gestione autenticazione
-│   │   └── api.js          # Client API
-│   └── styles/             # Sistema CSS
+│   ├── games/               # Implemented games
+│   │   ├── Quiz/            # Quiz system
+│   │   ├── Memory/          # Memory game
+│   │   ├── Matching/        # Matching game
+│   │   └── Sorting/         # Sorting game
+│   ├── pages/               # Main pages
+│   │   ├── Home.jsx         # Main dashboard
+│   │   ├── Profile.jsx      # User profile
+│   │   ├── TeacherPanel.jsx # Teacher panel
+│   │   └── Results.jsx      # Results & statistics
+│   ├── core/                # Core logic
+│   │   ├── AuthContext.js   # Authentication management
+│   │   └── api.js           # API client
+│   └── styles/              # CSS system
 │       ├── design-system.css
 │       └── variables.css
 ```
@@ -107,68 +107,68 @@ frontend/
 ```
 backend/
 ├── src/
-│   ├── controllers/        # Logica business
+│   ├── controllers/        # Business logic
 │   │   ├── userController.js
 │   │   ├── progressController.js
 │   │   ├── questionController.js
 │   │   └── trophyController.js
-│   ├── models/             # Modelli MongoDB
-│   │   ├── User.js         # Schema utenti
-│   │   ├── Progress.js     # Schema progressi
-│   │   ├── Trophy.js       # Schema trofei
-│   │   └── Question.js     # Schema domande
-│   ├── services/           # Servizi business
+│   ├── models/             # MongoDB models
+│   │   ├── User.js         # User schema
+│   │   ├── Progress.js     # Progress schema
+│   │   ├── Trophy.js       # Trophy schema
+│   │   └── Question.js     # Question schema
+│   ├── services/           # Business services
 │   │   ├── progressService.js
 │   │   ├── trophyService.js
 │   │   └── questionService.js
-│   ├── routes/             # Definizione API
-│   └── utils/              # Utilità
+│   ├── routes/             # API definitions
+│   └── utils/              # Utilities
 │       ├── authMiddleware.js
 │       ├── errorHandler.js
 │       └── recommendationEngine.js
-└── tests/                  # Suite test completa
+└── tests/                  # Complete test suite
 ```
 
 ### 🔄 Shared
 ```
 shared/
-└── constraints.js          # Configurazioni condivise
+└── constraints.js          # Shared configurations
 ```
 
-## 🚀 Installazione e Setup
+## 🚀 Installation & Setup
 
-### 📋 Prerequisiti
+### 📋 Prerequisites
 - **Node.js**: >= 16.0.0
 - **MongoDB**: >= 4.4
 - **npm**: >= 8.0.0
 
 ### ⚡ Quick Start
 
-1. **Clona il repository**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/LorussoMarco/played
 cd played
 ```
 
-2. **Installa le dipendenze**
+2. **Install dependencies**
 ```bash
-# Dipendenze root
+# Root dependencies
 npm install
 
-# Dipendenze frontend
+# Frontend dependencies
 cd frontend
 npm install
 cd ..
 
-# Dipendenze backend
+# Backend dependencies
 cd backend
 npm install
 cd ..
 ```
 
-3. **Configura le variabili d'ambiente**
+3. **Configure environment variables**
 
-Crea un file `.env` nella root del progetto:
+Create a `.env` file in the project root:
 ```env
 # Database
 MONGODB_URI=mongodb://localhost:27017/played
@@ -185,69 +185,69 @@ JWT_EXPIRE=7d
 NODE_ENV=development
 ```
 
-4. **Avvia i servizi**
+4. **Start the services**
 
-**Terminale 1 - Backend:**
+**Terminal 1 - Backend:**
 ```bash
 npm run start:backend
 ```
 
-**Terminale 2 - Frontend:**
+**Terminal 2 - Frontend:**
 ```bash
 cd frontend
 npm start
 ```
 
-5. **Accedi all'applicazione**
+5. **Access the application**
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:4000
 
 ## 📊 API Endpoints
 
-### 🔐 Autenticazione
-- `POST /api/users` - Registrazione utente
+### 🔐 Authentication
+- `POST /api/users` - User registration
 - `POST /api/users/auth/login` - Login
 - `POST /api/users/auth/logout` - Logout
-- `GET /api/users/profile` - Profilo utente
+- `GET /api/users/profile` - User profile
 
-### 🎮 Giochi
-- `GET /api/games` - Lista giochi disponibili
-- `GET /api/games/:id` - Dettagli gioco specifico
+### 🎮 Games
+- `GET /api/games` - List available games
+- `GET /api/games/:id` - Game details
 
-### ❓ Domande
-- `GET /api/questions` - Lista domande
-- `GET /api/questions/:category` - Domande per categoria
-- `POST /api/questions` - Crea domanda (docenti)
-- `PUT /api/questions/:id` - Modifica domanda (docenti)
-- `DELETE /api/questions/:id` - Elimina domanda (docenti)
+### ❓ Questions
+- `GET /api/questions` - List all questions
+- `GET /api/questions/:category` - Questions by category
+- `POST /api/questions` - Create question (teachers)
+- `PUT /api/questions/:id` - Update question (teachers)
+- `DELETE /api/questions/:id` - Delete question (teachers)
 
-### 📈 Progressi
-- `GET /api/progress` - Progressi utente
-- `POST /api/progress` - Salva progresso partita
-- `GET /api/progress/questions` - Domande filtrate per livello
-- `GET /api/progress/stats` - Statistiche dettagliate
+### 📈 Progress
+- `GET /api/progress` - User progress
+- `POST /api/progress` - Save game progress
+- `GET /api/progress/questions` - Filtered questions by level
+- `GET /api/progress/stats` - Detailed statistics
 
-### 🏆 Trofei
-- `GET /api/trophy` - Trofei disponibili
-- `GET /api/trophy/user` - Trofei utente
-- `POST /api/trophy/check` - Verifica nuovi trofei
+### 🏆 Trophies
+- `GET /api/trophy` - Available trophies
+- `GET /api/trophy/user` - User trophies
+- `POST /api/trophy/check` - Check for new trophies
 
-## 🎨 Sistema di Design
+## 🎨 Design System
 
-### 🎨 Palette Colori
+### 🎨 Color Palette
 ```css
 :root {
-  /* Colori Primari */
+  /* Primary Colors */
   --primary: #4A90E2;
   --secondary: #F7C873;
   --accent: #4AE290;
   
-  /* Gradienti */
+  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-success: linear-gradient(135deg, #4AE290 0%, #2DD4BF 100%);
   --gradient-warning: linear-gradient(135deg, #F7C873 0%, #F59E0B 100%);
   
-  /* Stati */
+  /* States */
   --success: #4AE290;
   --error: #F55A5A;
   --warning: #F7C873;
@@ -255,58 +255,58 @@ npm start
 }
 ```
 
-### 🎯 Componenti UI
-- **Design System**: Sistema di design coerente con variabili CSS
-- **Animazioni**: Transizioni fluide con CSS3 e Framer Motion
-- **Responsive**: Grid system e breakpoints ottimizzati
-- **Accessibilità**: ARIA labels, contrasti WCAG 2.1 AA
+### 🎯 UI Components
+- **Design System**: Consistent design with CSS variables
+- **Animations**: Smooth transitions with CSS3 and Framer Motion
+- **Responsive**: Grid system and optimized breakpoints
+- **Accessibility**: ARIA labels, WCAG 2.1 AA contrast
 
-## 🏆 Sistema di Progressi e Trofei
+## 🏆 Progress & Trophy System
 
-### 📊 Sistema di Livelli
-- **Calcolo Automatico**: Basato su punti esperienza accumulati
-- **Soglie Progressive**: Difficoltà crescente per livelli superiori
-- **Sblocco Contenuti**: Nuove domande e giochi per livello
+### 📊 Level System
+- **Automatic Calculation**: Based on accumulated XP
+- **Progressive Thresholds**: Increasing difficulty at higher levels
+- **Content Unlocking**: New questions and games per level
 
-### 🏅 Tipi di Trofei
-- **Livello**: Raggiungi livello X
-- **Completamento**: Completa Y giochi
-- **Streak**: Gioca per X giorni consecutivi
-- **Performance**: Ottieni punteggio perfetto
-- **Categoria**: Maestria in una materia specifica
+### 🏅 Trophy Types
+- **Level**: Reach level X
+- **Completion**: Complete Y games
+- **Streak**: Play for X consecutive days
+- **Performance**: Achieve perfect scores
+- **Category**: Mastery of a specific subject
 
 ### 📈 Analytics
-- Tempo di gioco per sessione
-- Tasso di completamento per categoria
-- Progression tracking dettagliato
-- Identificazione aree di miglioramento
+- Playtime per session
+- Completion rate by category
+- Detailed progression tracking
+- Identification of improvement areas
 
-## 👥 Gestione Utenti
+## 👥 User Management
 
-### 👨‍🎓 Studenti
-- **Profili Personalizzabili**: Avatar, informazioni scolastiche
-- **Tracciamento Progressi**: Dashboard personalizzata
-- **Raccomandazioni**: Contenuti suggeriti basati su performance
+### 👨‍🎓 Students
+- **Customizable Profiles**: Avatars, school info
+- **Progress Tracking**: Personalized dashboard
+- **Recommendations**: AI-suggested content based on performance
 
-### 👨‍🏫 Docenti
-- **Panel Dedicato**: Interfaccia per gestione contenuti
-- **Creazione Domande**: Editor integrato per quiz personalizzati
-- **Gestione Contenuti**: CRUD completo per materiali didattici
+### 👨‍🏫 Teachers
+- **Dedicated Panel**: Content management interface
+- **Question Creation**: Integrated quiz editor
+- **Content Management**: Full CRUD for educational materials
 
-### 🔒 Sicurezza
-- **Autenticazione JWT**: Token sicuri con scadenza
-- **Hash Password**: bcrypt con salt rounds
-- **Validazione Input**: Joi schema validation
-- **Middleware Sicurezza**: Rate limiting, CORS configurato
+### 🔒 Security
+- **JWT Authentication**: Secure tokens with expiration
+- **Password Hashing**: bcrypt with salt rounds
+- **Input Validation**: Joi schema validation
+- **Security Middleware**: Rate limiting, configured CORS
 
 ## 🧪 Testing
 
 ### 🔬 Backend Testing
 ```bash
 cd backend
-npm test                # Esegui tutti i test
+npm test                # Run all tests
 npm run test:watch      # Watch mode
-npm run test:coverage   # Report coverage
+npm run test:coverage   # Coverage report
 ```
 
 ### ⚡ Frontend Testing
@@ -317,41 +317,37 @@ npm run test:coverage   # Coverage report
 ```
 
 ### 📋 Test Coverage
-- **Modelli**: Unit test per tutti i modelli MongoDB
-- **Servizi**: Test logica business
-- **API**: Integration test per endpoints
-- **Componenti**: React Testing Library
+- **Models**: Unit tests for all MongoDB models
+- **Services**: Business logic tests
+- **API**: Endpoint integration tests
+- **Components**: React Testing Library
 
-## 🔧 Configurazione
+## 🔧 Configuration
 
-### ⚙️ Configurazioni Condivise
-Il file `shared/constraints.js` centralizza:
-- Validazione form e input
-- Configurazioni giochi
-- Soglie livelli e punteggi
-- Categorie e tassonomie
+### ⚙️ Shared Configurations
+The `shared/constraints.js` file centralizes:
+- Form & input validation
+- Game configurations
+- Level thresholds & scoring
+- Categories & taxonomies
 
-### 🎮 Configurazione Giochi
+### 🎮 Game Configuration
 ```javascript
 const GAME_CONFIGS = {
   QUIZ_TIME_LIMITS: {
-    matematica: 20,
-    scienze: 25,
-    geografia: 25,
-    storia: 35,
-    italiano: 30
+    math: 20,
+    science: 25,
+    geography: 25,
+    history: 35,
+    italian: 30
   },
   MEMORY_CATEGORIES: {
-    animali: 'Animali',
-    colori: 'Colori',
-    forme: 'Forme'
+    animals: 'Animals',
+    colors: 'Colors',
+    shapes: 'Shapes'
   }
 };
 ```
-
-
-
-
 
 ## 🚀 Deployment
 
@@ -361,12 +357,12 @@ const GAME_CONFIGS = {
 cd frontend
 npm run build
 
-# Il backend è pronto per produzione
+# Backend is production-ready
 cd ../backend
 npm start
 ```
 
-### 📦 Variabili Produzione
+### 📦 Production Variables
 ```env
 NODE_ENV=production
 MONGODB_URI=mongodb://your-production-db
@@ -374,15 +370,14 @@ JWT_SECRET=your-super-secure-production-secret
 FRONTEND_URL=https://your-domain.com
 ```
 
-
 ---
 
 <div align="center">
 
-**🎓 PLAYED - Imparare Divertendosi! 🎮**
+**🎓 PLAYED - Learning Through Fun! 🎮**
 
-*Sviluppato con ❤️ per l'educazione digitale*
+*Built with ❤️ for digital education*
 
-[⭐ Star su GitHub](https://github.com/LorussoMarco/played) | [🐛 Report Bug](https://github.com/LorussoMarco/played/issues) | [💡 Feature Request](https://github.com/LorussoMarco/played/issues)
+[⭐ Star on GitHub](https://github.com/LorussoMarco/played) | [🐛 Report Bug](https://github.com/LorussoMarco/played/issues) | [💡 Feature Request](https://github.com/LorussoMarco/played/issues)
 
 </div>
