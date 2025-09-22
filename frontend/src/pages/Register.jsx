@@ -8,6 +8,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Stepper, { Step } from '../components/Stepper';
 import { defaultAvatars, getAvatarUrl } from '../utils/avatarUtils';
 import { USER_CONSTRAINTS, validatePasswordStrength, validateEmail, getSchoolLevelDisplayName } from '../shared/constraints';
+import Chips from '../components/Chips';
 
 const initialState = {
   name: '',
@@ -16,11 +17,20 @@ const initialState = {
   role: 'allievo',
   schoolLevel: '',
   class: '',
-  subjects: '',
+  subjects: [],
   school: '',
   teachingLevel: '',
   avatar: '',
 };
+
+// Available subjects for teachers
+const AVAILABLE_SUBJECTS = [
+  'matematica',
+  'italiano', 
+  'storia',
+  'scienze',
+  'geografia'
+];
 
 export default function Register() {
   const [form, setForm] = useState(initialState);
@@ -39,8 +49,18 @@ export default function Register() {
     setForm(f => ({ ...f, [name]: value }));
   };
 
+  const handleSubjectsChange = (selectedSubjects) => {
+    setForm(f => ({ ...f, subjects: selectedSubjects }));
+  };
+
   const handleRoleChange = role => {
-    setForm(f => ({ ...initialState, role, email: f.email, avatar: f.avatar }));
+    setForm(f => ({ 
+      ...initialState, 
+      role, 
+      email: f.email, 
+      avatar: f.avatar,
+      subjects: [] // Ensure subjects is always an array
+    }));
   };
 
   const handlePasswordChange = e => {
@@ -93,7 +113,7 @@ export default function Register() {
           return false;
         }
       } else {
-        if (!form.subjects || !form.school || !form.teachingLevel) {
+        if (!form.subjects || form.subjects.length === 0 || !form.school || !form.teachingLevel) {
           setError('Compila tutti i campi richiesti.');
           return false;
         }
@@ -134,7 +154,8 @@ export default function Register() {
     try {
       let data = { ...form };
       if (form.role === 'docente') {
-        data.subjects = form.subjects.split(',').map(s => s.trim()).filter(Boolean);
+        // subjects is already an array, no need to split
+        data.subjects = form.subjects;
         delete data.schoolLevel;
         delete data.class;
       } else {
@@ -283,7 +304,13 @@ export default function Register() {
               </select>
             </>}
             {form.role === 'docente' && <>
-              <input name="subjects" placeholder="Materie insegnate (separate da virgola)" value={form.subjects} onChange={handleChange} className="form-input" />
+              <Chips
+                availableOptions={AVAILABLE_SUBJECTS}
+                selectedOptions={form.subjects}
+                onSelectionChange={handleSubjectsChange}
+                placeholder="Materie insegnate"
+                className="subjects-chips"
+              />
               <input name="school" placeholder="Scuola" value={form.school} onChange={handleChange} className="form-input" />
               <input name="teachingLevel" placeholder="Livello scolastico insegnato" value={form.teachingLevel} onChange={handleChange} className="form-input" />
             </>}
@@ -302,7 +329,7 @@ export default function Register() {
                   <li><b>Classe:</b> {form.class}</li>
                 </>}
                 {form.role === 'docente' && <>
-                  <li><b>Materie:</b> {form.subjects}</li>
+                  <li><b>Materie:</b> {form.subjects.join(', ') || 'Nessuna materia selezionata'}</li>
                   <li><b>Scuola:</b> {form.school}</li>
                   <li><b>Livello insegnato:</b> {form.teachingLevel}</li>
                 </>}
